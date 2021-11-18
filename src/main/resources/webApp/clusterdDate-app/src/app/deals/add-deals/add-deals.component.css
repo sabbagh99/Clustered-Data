@@ -1,0 +1,53 @@
+.header{
+    margin: 0%;
+    padding: 0%;
+/* height: 100vh; */
+background-size: cover;
+background-position: center;
+justify-content: center;
+align-items: center;
+font-family: sans-serif;
+}
+form {
+
+    max-width: fit-content;
+    margin: auto;
+
+}
+
+h2{
+    text-align: center;
+
+}
+.search-field{
+height: 45px;
+padding: 10px;
+border: none;
+border-radius: 25px;
+outline: none;
+}
+
+.business{
+width: 250px;
+margin: 15px;
+
+}
+.location{
+    background:#dddddd;
+    width: 200px;
+    height: 32px;
+    margin: 10px;
+}
+
+.search-btn{
+
+    height: 50px;
+    width: 150px;
+
+    background: #509a7a;
+    border: none;
+    color: #000;
+    border-radius: 25px;
+    
+
+}

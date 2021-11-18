@@ -1,33 +1,60 @@
-<div align='center'><h1>Add Deals</h1></div>
+<router-outlet></router-outlet>
+<div align='center'>
+  <h3>All Deals</h3>
+</div>
+<form [formGroup]="addForm" (ngSubmit)="onSubmit()" >
+  <input class="search-field location" type="number" formControlName="id" placeholder="Search for deal by ID" name="id" 
+  id="id">
+  <button class="search-btn">search</button>
 
-<div>
-  <table class="table" style="width: 80%">
-    <tr>
-      <th>fromCurrency</th>
-      <th>toCurrency</th>
-      <th>createdAt</th>
-      <th>dealAmount</th>
-      <th></th>
-    </tr>
-    <tr *ngFor="let deals of deals">
-      <td>
-        {{deals.fromCurrency}}
-      </td>
-      <td>
-        {{deals.toCurrency}}
-      </td>
-      <td>
-        {{deals.createdAt}}
-      </td>
-      <td>
-      {{deals.dealAmount}}
-    </td>
-    </tr>
+</form>
+<div style="display: grid;">
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>fromCurrency</th>
+        <th>toCurrency</th>
+        <th>createdAt</th>
+        <th>dealAmount</th>
+
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="active-row" *ngFor="let deals of deals">
+          <td>
+            {{deals.id}}
+          </td>
+          <td>
+            {{deals.fromCurrency}}
+          </td>
+          <td>
+            {{deals.toCurrency}}
+          </td>
+          <td>
+            {{deals.createdAt}}
+          </td>
+          <td>
+            {{deals.dealAmount}}
+          </td>
+        </tr>
+        <tr class="active-row"  *ngIf="isOneDeal" >
+          <td>
+            {{deal.id}}
+          </td>
+          <td>
+            {{deal.fromCurrency}}
+          </td>
+          <td>
+            {{deal.toCurrency}}
+          </td>
+          <td>
+            {{deal.createdAt}}
+          </td>
+          <td>
+            {{deal.dealAmount}}
+          </td>
+        </tr>
+    </tbody>
   </table>
 </div>
-<div>
-  <p>
-    <button (click)="addDeals()"> Add New deal</button>
-  </p>
-</div>
-<router-outlet></router-outlet>
