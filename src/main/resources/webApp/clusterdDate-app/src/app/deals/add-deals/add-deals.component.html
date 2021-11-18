@@ -1,0 +1,35 @@
+<div class="col-md-6 user-container">
+  <h2 class="text-center">Add Deal</h2>
+  <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="deals">Deal:</label>
+      <input type="text" formControlName="deals" placeholder="deals" name="deals" class="form-control"
+             id="deals">
+    </div>
+    <br/>
+
+    <div class="form-group">
+      <label for="fromCurrency">fromCurrency:</label>
+      <input type="text" formControlName="fromCurrency" placeholder="fromCurrency" name="fromCurrency" class="form-control"
+             id="fromCurrency">
+    </div>
+    <div class="form-group">
+      <label for="toCurrency">toCurrency:</label>
+      <input type="text" formControlName="toCurrency" placeholder="toCurrency" name="toCurrency" class="form-control"
+             id="toCurrency">
+    </div>
+    <div class="form-group">
+      <label for="createdAt">Author:</label>
+      <input type="text" formControlName="createdAt" placeholder="createdAt" name="createdAt" class="form-control"
+             id="createdAt">
+    </div>
+
+    <div class="form-group">
+      <label for="dealAmount">dealAmount:</label>
+      <input type="text" formControlName="dealAmount" placeholder="dealAmount" name="dealAmount" class="form-control"
+             id="dealAmount">
+    </div>
+    <br/>
+    <button class="btn btn-success">Add</button>
+  </form>
+</div>

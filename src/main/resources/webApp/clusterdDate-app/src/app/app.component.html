@@ -1,0 +1,33 @@
+<div align='center'><h1>Add Deals</h1></div>
+
+<div>
+  <table class="table" style="width: 80%">
+    <tr>
+      <th>fromCurrency</th>
+      <th>toCurrency</th>
+      <th>createdAt</th>
+      <th>dealAmount</th>
+      <th></th>
+    </tr>
+    <tr *ngFor="let deals of deals">
+      <td>
+        {{deals.fromCurrency}}
+      </td>
+      <td>
+        {{deals.toCurrency}}
+      </td>
+      <td>
+        {{deals.createdAt}}
+      </td>
+      <td>
+      {{deals.dealAmount}}
+    </td>
+    </tr>
+  </table>
+</div>
+<div>
+  <p>
+    <button (click)="addDeals()"> Add New deal</button>
+  </p>
+</div>
+<router-outlet></router-outlet>
