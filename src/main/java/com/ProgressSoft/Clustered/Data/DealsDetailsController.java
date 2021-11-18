@@ -20,7 +20,7 @@ public class DealsDetailsController {
     }
 
     @GetMapping("/dealsDetails/{id}")
-    public DealsDetails getDealsDetails(@PathVariable("id") Long id) {
+    public DealsDetails getOneDealDetail(@PathVariable("id") Long id) {
         return dealsDetailsRepository.findById(id).get();
     }
 
@@ -30,5 +30,6 @@ public class DealsDetailsController {
 
         return HttpStatus.CREATED;
     }
+
 
 }
