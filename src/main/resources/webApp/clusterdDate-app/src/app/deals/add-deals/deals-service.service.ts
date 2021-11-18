@@ -13,6 +13,7 @@ export class DealsService {
   }
 
   getDealsDetails(): Observable<any> {
+    
     return this.http.get(`${this.url}`);
   }
 
@@ -20,5 +21,8 @@ export class DealsService {
     return this.http.post(`${this.url}`, deals);
   }
 
-
+  getOneDealDetail(id: number): Observable<any> {
+    
+    return this.http.get(`${this.url}/${id}`, );
+  }
 }
