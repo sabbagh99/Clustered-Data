@@ -25,7 +25,7 @@ public class DealsDetailsController {
     }
 
     @PostMapping("/dealsDetails/")
-    public HttpStatus addBook(@RequestBody DealsDetails dealsDetails){
+    public HttpStatus addDeals(@RequestBody DealsDetails dealsDetails){
         dealsDetailsRepository.save(dealsDetails);
 
         return HttpStatus.CREATED;
