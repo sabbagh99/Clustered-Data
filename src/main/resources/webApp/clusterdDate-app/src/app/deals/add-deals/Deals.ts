@@ -4,5 +4,4 @@ export class Deals {
   toCurrency: string;
   createdAt: string;
   dealAmount: number;
-
 }

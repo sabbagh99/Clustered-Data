@@ -11,12 +11,12 @@
 <div style="display: grid;">
   <table class="styled-table">
     <thead>
-      <tr>
+      <tr class="active-row">
         <th>ID</th>
-        <th>fromCurrency</th>
-        <th>toCurrency</th>
-        <th>createdAt</th>
-        <th>dealAmount</th>
+        <th>From Currency</th>
+        <th>To Currency</th>
+        <th>Created At</th>
+        <th>Deal Amount</th>
 
       </tr>
     </thead>
@@ -32,10 +32,10 @@
             {{deals.toCurrency}}
           </td>
           <td>
-            {{deals.createdAt}}
+            {{deals.createdAt }}
           </td>
           <td>
-            {{deals.dealAmount}}
+            {{deals.dealAmount +" "+deals.fromCurrency}}
           </td>
         </tr>
         <tr class="active-row"  *ngIf="isOneDeal" >
@@ -52,7 +52,7 @@
             {{deal.createdAt}}
           </td>
           <td>
-            {{deal.dealAmount}}
+            {{deal.dealAmount +" "+deal.fromCurrency}}
           </td>
         </tr>
     </tbody>

@@ -47,14 +47,21 @@ export class AddDealsComponent implements OnInit {
   onSubmit() {
     
     if (this.addForm.value.fromCurrency === '' || this.addForm.value.toCurrency === '' || this.addForm.value.dealAmount === '') {
-      alert("All fields is requierd");
+      alert("All fields are requierd");
 
     } else {
-      alert("add secssfu;llyyyyy");
 
       this.dealsService.addDeals(this.addForm.value)
       .subscribe(data => {
-        this.router.navigate(['list-deals']);
+        if("CREATED"==data){
+                alert(" Deal add Successfully");
+
+          this.router.navigate(['list-deals']);
+        }else{
+
+          alert("Deal alrady exists");
+
+        }
       });
     }
 
