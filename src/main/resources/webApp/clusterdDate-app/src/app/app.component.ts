@@ -18,14 +18,8 @@ export class AppComponent implements OnInit {
   addForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder, private router: Router, private dealsService: DealsService) {
-    this.router.navigate(['add-deals'])
-      .then((e) => {
-        if (e) {
-          console.log("Navigation is successful!");
-        } else {
-          console.log("Navigation has failed!");
-        }
-      });
+    this.router.navigate(['add-deals']);
+      
   }
 
 
@@ -33,15 +27,19 @@ export class AppComponent implements OnInit {
     this.dealsService.getDealsDetails().subscribe(data => {
       this.isOneDeal = false;
       this.deals = data;
-
     });
   }
 
   getOneDealDetail(id) {
     this.dealsService.getOneDealDetail(id).subscribe(data => {
-      this.isOneDeal = true;
-      this.deal = data;
-      this.deals = null;
+      
+      if(data.id !=null){
+        this.isOneDeal = true;
+        this.deal = data;
+        this.deals = null;
+      }else{
+        alert("Deal Id not Exists");
+      }
     });
   }
 

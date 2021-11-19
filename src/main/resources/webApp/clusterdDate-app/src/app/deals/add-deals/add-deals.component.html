@@ -7,7 +7,7 @@
     <div class="form-box">
       <label for="fromCurrency">From Currency:</label>
       <select class="search-field business" formControlName="fromCurrency" name="fromCurrency" id="fromCurrency">
-        <option selected="" value="fromCurrency"></option>
+        <option selected="" value=""></option>
         <option [ngValue]="c.name" *ngFor="let c of currencyList">
           {{c.name}}
         </option>
@@ -19,7 +19,6 @@
           {{c.name}}
         </option>
       </select>
-      <!-- <label  for="dealAmount">dealAmount:</label> -->
       <input class="search-field location" type="number" formControlName="dealAmount" placeholder="Deal Amount" name="dealAmount" 
         id="dealAmount">
     

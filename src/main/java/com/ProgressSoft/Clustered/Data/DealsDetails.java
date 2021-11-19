@@ -19,7 +19,6 @@ public class DealsDetails {
 
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "createdAt")
     private Date createdAt;
 
     private double dealAmount;
