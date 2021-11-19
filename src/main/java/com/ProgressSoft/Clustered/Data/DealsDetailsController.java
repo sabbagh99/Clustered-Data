@@ -2,6 +2,7 @@ package com.ProgressSoft.Clustered.Data;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,9 +19,8 @@ public class DealsDetailsController {
     }
 
     @RequestMapping("/")
-    @ResponseBody
-    String home() {
-        return "Hello World!";
+    public RedirectView redirectWithUsingRedirectView() {
+        return new RedirectView("http://localhost:4200");
     }
     @GetMapping("/dealsDetails/")
     public Iterable<DealsDetails> getDealsDetails() {
