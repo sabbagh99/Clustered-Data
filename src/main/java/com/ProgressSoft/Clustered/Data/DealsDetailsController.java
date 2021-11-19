@@ -17,6 +17,11 @@ public class DealsDetailsController {
         this.dealsDetailsRepository = dealsDetailsRepository;
     }
 
+    @RequestMapping("/")
+    @ResponseBody
+    String home() {
+        return "Hello World!";
+    }
     @GetMapping("/dealsDetails/")
     public Iterable<DealsDetails> getDealsDetails() {
         return dealsDetailsRepository.findAll();
