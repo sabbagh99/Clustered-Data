@@ -7,7 +7,7 @@ import {Observable} from 'rxjs';
 })
 export class DealsService {
 
-  private url = 'http://localhost:8090/dealsDetails/';
+  private url = 'https://clustered-data.herokuapp.com/dealsDetails/';
 
   constructor(private http: HttpClient) {
   }
