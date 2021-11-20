@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder, private router: Router, private dealsService: DealsService) {
     this.router.navigate(['add-deals']);
-      
+
   }
 
 
@@ -32,12 +32,12 @@ export class AppComponent implements OnInit {
 
   getOneDealDetail(id) {
     this.dealsService.getOneDealDetail(id).subscribe(data => {
-      
-      if(data.id !=null){
+
+      if (data.id != null) {
         this.isOneDeal = true;
         this.deal = data;
         this.deals = null;
-      }else{
+      } else {
         alert("Deal Id not Exists");
       }
     });
@@ -45,20 +45,23 @@ export class AppComponent implements OnInit {
 
 
   onSubmit() {
-    if(this.addForm.value.id != ''){
-    this.getOneDealDetail(this.addForm.value.id);
-  }
-  }
-  
-  ngOnInit(): void {
-    
-      this.addForm = this.formBuilder.group({
-        id: ['', Validators.required]
-      });
-      this.router.events.subscribe(value => {
+    if (this.addForm.value.id != '') {
+      this.getOneDealDetail(this.addForm.value.id);
+    } else {
+      alert("Id is requierd ");
 
-        this.getDealsDetails();
-      });
-  
+    }
+  }
+
+  ngOnInit(): void {
+
+    this.addForm = this.formBuilder.group({
+      id: ['', Validators.required]
+    });
+    this.router.events.subscribe(value => {
+
+      this.getDealsDetails();
+    });
+
   }
 }
